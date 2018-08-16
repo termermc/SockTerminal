@@ -7,7 +7,7 @@ import java.net.Socket;
 import javax.swing.JOptionPane;
 
 public class SockTerminal {
-	public static String VERSION = "1.0";
+	public static String VERSION = "0.2";
 	
 	public static Terminal window = null;
 	public static Socket connection = null;
