@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>SockTerminal</groupId>
   <artifactId>SockTerminal</artifactId>
-  <version>1.0</version>
+  <version>0.2</version>
   <name>SockTerminal</name>
   <description>A simple GUI application to interact with sockets</description>
 </project>

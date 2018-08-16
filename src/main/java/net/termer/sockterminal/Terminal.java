@@ -1,10 +1,11 @@
 package net.termer.sockterminal;
 
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.IOException;
 
 import javax.swing.JButton;
@@ -19,7 +20,7 @@ public class Terminal extends JFrame {
 	
 	private JTextArea t = new JTextArea(12, 40);
 	private JButton conn = new JButton("Make Connection");
-	private JTextField input = new JTextField(40);
+	private JTextArea input = new JTextArea();
 	private String lastConnection = "";
 	
 	public Terminal() {
@@ -34,21 +35,19 @@ public class Terminal extends JFrame {
 				new Connection().start();
 			}
 		});
-		input.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-					String processed = input.getText().replace("\\\\", "\\").replace("\\n", "\n");
-					for(char c : processed.toCharArray()) {
-						SockTerminal.connection.getOutputStream().write((int) c);
-					}
-					if(ConnectionWindow.newline.isSelected()) {
-						SockTerminal.connection.getOutputStream().write((int) '\n');
-					}
-					input.setText("");
-				} catch(IOException ex) {
-					ex.printStackTrace();
-				}
+		input.addKeyListener(new KeyListener() {
+			public void keyPressed(KeyEvent e) {
+				
 			}
+
+			public void keyReleased(KeyEvent e) {
+				
+			}
+
+			public void keyTyped(KeyEvent e) {
+				
+			}
+			
 		});
 		
 		input.setEnabled(false);
